@@ -1,0 +1,17 @@
+.button {
+	margin-left: 400px;
+	margin-top: 12px;
+}
+
+.dropZone {
+	border: 2px solid blue;
+	width: 500px;
+}
+
+.file {
+	cursor: default;
+}
+
+.selected {
+	background-color: lightgrey;
+}
