@@ -3,6 +3,8 @@ import classNames from "classnames";
 
 import "./Solution.css";
 import { SolutionModel } from "../../models/solution";
+import { Day } from "../Day";
+import { GeneralInformation } from "../GeneralInformation";
 
 export interface SolutionProps {
 	obj: SolutionModel;
@@ -10,13 +12,16 @@ export interface SolutionProps {
 
 const Solution: React.FC<SolutionProps> = (props) => {
 	const { obj } = props;
-	const { dataset, name } = obj;
+	const { dataset, days, name, totalCost } = obj;
+
+	const renderDays = () =>
+		days.map((day, index) => <Day day={day} key={index} index={index} />);
 
 	return (
-		<div>
-			<div>{dataset}</div>
-			<div>{name}</div>
-		</div>
+		<>
+			<GeneralInformation dataset={dataset} name={name} totalCost={totalCost} />
+			{renderDays()}
+		</>
 	);
 };
 

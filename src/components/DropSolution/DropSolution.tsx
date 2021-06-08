@@ -66,6 +66,8 @@ const DropSolution: React.FC<DropSolutionProps> = (props) => {
 		);
 	};
 
+	// TODO: useEffect to set objJson
+
 	return (
 		<div>
 			<div className="dropZone" {...getRootProps()}>

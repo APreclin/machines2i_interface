@@ -1,6 +1,6 @@
 export interface SolutionModel {
 	dataset: string;
-	days: Day[];
+	days: DayModel[];
 	idleMachineCosts: number;
 	name: string;
 	numberOfTechnicianDays: number;
@@ -12,21 +12,28 @@ export interface SolutionModel {
 	truckDistance: number;
 }
 
-export interface Day {
-	deliveryRounds?: DeliveryRound[];
-	installationRounds?: InstallationRound[];
+export interface DayModel {
+	deliveryRounds?: DeliveryRoundModel[];
+	installationRounds?: InstallationRoundModel[];
 	numberOfTechnicians: number;
 	numberOfTrucks: number;
 }
 
-export interface DeliveryRound {
+export interface DeliveryRoundModel {
 	id: number;
 	depot: Location;
+	requests: Request[];
 }
 
-export interface InstallationRound {
+export interface InstallationRoundModel {
 	id: number;
 	home: Location;
+	requests: Request[];
+}
+
+export interface Request {
+	id: number;
+	location: Location;
 }
 
 export interface Location {
