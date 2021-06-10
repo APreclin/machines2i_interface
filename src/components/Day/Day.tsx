@@ -1,4 +1,5 @@
 import React from "react";
+import { Collapse } from "react-collapse";
 import classNames from "classnames";
 
 import "./Day.css";
@@ -19,6 +20,14 @@ const Day: React.FC<DayProps> = (props) => {
 		numberOfTechnicians,
 		numberOfTrucks,
 	} = day;
+
+	const [toggleDay, setToggleDay] = React.useState<String>("Show");
+	const [isOpened, setIsOpened] = React.useState<boolean>(false);
+
+	const onClick = () => {
+		setIsOpened(!isOpened);
+		toggleDay === "Show" ? setToggleDay("Hide") : setToggleDay("Show");
+	};
 
 	const renderDeliveryRounds = () => {
 		if (!deliveryRounds) return null;
@@ -47,10 +56,15 @@ const Day: React.FC<DayProps> = (props) => {
 	return (
 		<div>
 			<h4>Day {index + 1}</h4>
-			<p>Number of trucks : {numberOfTrucks}</p>
-			{renderDeliveryRounds()}
-			<p>Number of technicians : {numberOfTechnicians}</p>
-			{renderInstallationRounds()}
+			<p onClick={onClick}>{toggleDay}</p>
+			<Collapse isOpened={isOpened}>
+				<div>
+					<p>Number of trucks : {numberOfTrucks}</p>
+					{renderDeliveryRounds()}
+					<p>Number of technicians : {numberOfTechnicians}</p>
+					{renderInstallationRounds()}
+				</div>
+			</Collapse>
 		</div>
 	);
 };
