@@ -1,0 +1,4 @@
+.deliveryRound {
+	display: flex;
+	flex-direction: row;
+}

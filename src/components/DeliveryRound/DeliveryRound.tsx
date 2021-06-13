@@ -1,9 +1,9 @@
 import React from "react";
-import classNames from "classnames";
 
 import "./DeliveryRound.css";
 import { Canvas } from "../Canvas";
 import { DeliveryRoundModel } from "../../models/solution";
+import { Round } from "../Round";
 
 export interface DeliveryRoundProps {
 	deliveryRound: DeliveryRoundModel;
@@ -17,7 +17,10 @@ const DeliveryRound: React.FC<DeliveryRoundProps> = (props) => {
 	return (
 		<div>
 			<p>Delivery Round : {index + 1}</p>
-			<Canvas origin={depot} requests={requests} />
+			<div className="deliveryRound">
+				<Canvas origin={depot} requests={requests} />
+				<Round origin={depot} requests={requests} />
+			</div>
 		</div>
 	);
 };

@@ -17,8 +17,10 @@ const Machines2i: React.FC<Machines2iProps> = () => {
 
 	return (
 		<div className="container">
-			<h2>Machines2i</h2>
-			<DropSolution parentCallback={handleCallback} />
+			<div className="center">
+				<h2>Machines2i</h2>
+				<DropSolution parentCallback={handleCallback} />
+			</div>
 			{objJson ? <Solution obj={objJson} /> : null}
 		</div>
 	);

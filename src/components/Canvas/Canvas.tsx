@@ -19,6 +19,7 @@ const Canvas: React.FC<CanvasProps> = (props) => {
 		(context: CanvasRenderingContext2D | null) => {
 			if (!context) return;
 
+			context.fillStyle = "rgba(255, 0, 0, 1)";
 			context.arc(xOrigin, yOrigin, 5, 0, 2 * Math.PI);
 			context.fill();
 
@@ -31,6 +32,7 @@ const Canvas: React.FC<CanvasProps> = (props) => {
 				const { x: xCurrent, y: yCurrent } = currentLocation;
 
 				context.beginPath();
+				context.fillStyle = "rgba(0, 0, 0, 1)";
 				context.arc(xCurrent, yCurrent, 4, 0, 2 * Math.PI);
 				context.fill();
 				context.lineWidth = 2;

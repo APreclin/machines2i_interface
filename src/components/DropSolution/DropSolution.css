@@ -4,7 +4,10 @@
 }
 
 .dropZone {
-	border: 2px solid blue;
+	border: 2px dashed blue;
+	border-radius: 12px;
+	margin: 0 auto;
+	padding: 24px 0;
 	width: 500px;
 }
 

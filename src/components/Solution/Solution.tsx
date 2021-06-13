@@ -12,14 +12,37 @@ export interface SolutionProps {
 
 const Solution: React.FC<SolutionProps> = (props) => {
 	const { obj } = props;
-	const { dataset, days, name, totalCost } = obj;
+	const {
+		dataset,
+		days,
+		idleMachineCosts,
+		name,
+		numberOfTechnicianDays,
+		numberOfTechniciansUsed,
+		numberOfTruckDays,
+		numberOfTrucksUsed,
+		technicianDistance,
+		totalCost,
+		truckDistance,
+	} = obj;
 
 	const renderDays = () =>
 		days.map((day, index) => <Day day={day} key={index} index={index} />);
 
 	return (
 		<>
-			<GeneralInformation dataset={dataset} name={name} totalCost={totalCost} />
+			<GeneralInformation
+				dataset={dataset}
+				idleMachineCosts={idleMachineCosts}
+				name={name}
+				numberOfTechnicianDays={numberOfTechnicianDays}
+				numberOfTechniciansUsed={numberOfTechniciansUsed}
+				numberOfTruckDays={numberOfTruckDays}
+				numberOfTrucksUsed={numberOfTrucksUsed}
+				technicianDistance={technicianDistance}
+				totalCost={totalCost}
+				truckDistance={truckDistance}
+			/>
 			{renderDays()}
 		</>
 	);

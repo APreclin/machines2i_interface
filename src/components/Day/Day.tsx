@@ -21,13 +21,9 @@ const Day: React.FC<DayProps> = (props) => {
 		numberOfTrucks,
 	} = day;
 
-	const [toggleDay, setToggleDay] = React.useState<String>("Show");
 	const [isOpened, setIsOpened] = React.useState<boolean>(false);
 
-	const onClick = () => {
-		setIsOpened(!isOpened);
-		toggleDay === "Show" ? setToggleDay("Hide") : setToggleDay("Show");
-	};
+	const onClick = () => setIsOpened(!isOpened);
 
 	const renderDeliveryRounds = () => {
 		if (!deliveryRounds) return null;
@@ -54,14 +50,15 @@ const Day: React.FC<DayProps> = (props) => {
 	};
 
 	return (
-		<div>
-			<h4>Day {index + 1}</h4>
-			<p onClick={onClick}>{toggleDay}</p>
+		<div className="day">
+			<div className="dayCollapse" onClick={onClick}>
+				Day {index + 1}
+			</div>
+			<p>Number of trucks : {numberOfTrucks}</p>
+			<p>Number of technicians : {numberOfTechnicians}</p>
 			<Collapse isOpened={isOpened}>
 				<div>
-					<p>Number of trucks : {numberOfTrucks}</p>
 					{renderDeliveryRounds()}
-					<p>Number of technicians : {numberOfTechnicians}</p>
 					{renderInstallationRounds()}
 				</div>
 			</Collapse>

@@ -1,0 +1,9 @@
+.generalInformation {
+	margin: 24px 0 24px 32px;
+}
+
+.moreInformation {
+	font-style: italic;
+	cursor: pointer;
+	width: fit-content;
+}

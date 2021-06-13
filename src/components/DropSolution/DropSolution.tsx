@@ -38,10 +38,10 @@ const DropSolution: React.FC<DropSolutionProps> = (props) => {
 	});
 
 	const renderFiles = () => {
-		return <div>{files.map((file) => renderFile(file))}</div>;
+		return <div>{files.map((file, index) => renderFile(file, index))}</div>;
 	};
 
-	const renderFile = (file: File) => {
+	const renderFile = (file: File, index: number) => {
 		const { lastModified, name } = file;
 		const lastModifiedDate = new Date(lastModified).toUTCString();
 
@@ -58,7 +58,7 @@ const DropSolution: React.FC<DropSolutionProps> = (props) => {
 		return (
 			<div
 				className={classFile}
-				key={`${name} - ${lastModified}`}
+				key={`${name} - ${lastModified} - ${index}`}
 				onClick={onClick}
 			>
 				{name} - {lastModifiedDate}
@@ -72,14 +72,10 @@ const DropSolution: React.FC<DropSolutionProps> = (props) => {
 		<div>
 			<div className="dropZone" {...getRootProps()}>
 				<input {...getInputProps()} />
-				{isDragActive ? (
-					<p>Drop the files here ...</p>
-				) : (
-					<>
-						<p>Drag 'n' drop some files here</p>
-						{renderFiles()}
-					</>
-				)}
+				<>
+					<p>Drop some files here</p>
+					{renderFiles()}
+				</>
 			</div>
 			<button className="button" onClick={onClick} ref={btnDisplay}>
 				Display solution

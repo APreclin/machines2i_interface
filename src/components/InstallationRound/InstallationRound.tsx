@@ -1,9 +1,9 @@
 import React from "react";
-import classNames from "classnames";
 
 import "./InstallationRound.css";
 import { Canvas } from "../Canvas/Canvas";
 import { InstallationRoundModel } from "../../models/solution";
+import { Round } from "../Round";
 
 export interface InstallationRoundProps {
 	index: number;
@@ -18,6 +18,7 @@ const InstallationRound: React.FC<InstallationRoundProps> = (props) => {
 		<div>
 			<p>Installation Round : {index + 1}</p>
 			<Canvas origin={home} requests={requests} />
+			<Round origin={home} requests={requests} />
 		</div>
 	);
 };
