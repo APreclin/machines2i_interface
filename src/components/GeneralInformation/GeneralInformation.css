@@ -7,3 +7,12 @@
 	cursor: pointer;
 	width: fit-content;
 }
+
+.totalCost {
+	border: solid red 2px;
+	border-radius: 10px 100px / 120px;
+	font-weight: bold;
+	margin: 0 auto;
+	padding: 12px 20px;
+	width: fit-content;
+}

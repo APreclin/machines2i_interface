@@ -1,5 +1,4 @@
 import React from "react";
-import classNames from "classnames";
 
 import "./Canvas.css";
 import { Location, Request } from "../../models/solution";

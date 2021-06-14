@@ -1,6 +1,5 @@
 import React from "react";
 import { Collapse } from "react-collapse";
-import classNames from "classnames";
 
 import "./GeneralInformation.css";
 
@@ -35,13 +34,19 @@ const GeneralInformation: React.FC<GeneralInformationProps> = (props) => {
 
 	const onClick = () => setIsOpened(!isOpened);
 
+	const renderTotalCost = () => {
+		const formattedTotalCost = new Intl.NumberFormat("de-DE").format(totalCost);
+
+		return <p className="totalCost">{formattedTotalCost}</p>;
+	};
+
 	return (
 		<div className="generalInformation">
 			<h3>General Information</h3>
 			<div>
 				<p>Dataset : {dataset}</p>
 				<p>Name of the instance : {name}</p>
-				<p>Total cost of the solution : {totalCost}</p>
+				<p>Total cost of the solution : {renderTotalCost()}</p>
 				<p className="moreInformation" onClick={onClick}>
 					More information...
 				</p>
