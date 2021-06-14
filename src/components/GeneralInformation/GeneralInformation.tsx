@@ -46,7 +46,7 @@ const GeneralInformation: React.FC<GeneralInformationProps> = (props) => {
 			<div>
 				<p>Dataset : {dataset}</p>
 				<p>Name of the instance : {name}</p>
-				<p>Total cost of the solution : {renderTotalCost()}</p>
+				<div>Total cost of the solution : {renderTotalCost()}</div>
 				<p className="moreInformation" onClick={onClick}>
 					More information...
 				</p>

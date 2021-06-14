@@ -24,7 +24,7 @@ const Round: React.FC<RoundProps> = (props) => {
 			const { x: xCurrent, y: yCurrent } = currentLocation;
 
 			return (
-				<div>
+				<div key={index}>
 					{idPrevious} ({xPrevious}, {yPrevious}) -&gt; {idCurrent} ({xCurrent},{" "}
 					{yCurrent})
 				</div>
