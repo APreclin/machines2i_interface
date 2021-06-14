@@ -1,6 +1,5 @@
 import React from "react";
 import { Collapse } from "react-collapse";
-import classNames from "classnames";
 
 import "./Day.css";
 import { DayModel } from "../../models/solution";

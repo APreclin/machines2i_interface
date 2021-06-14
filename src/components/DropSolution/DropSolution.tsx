@@ -32,7 +32,7 @@ const DropSolution: React.FC<DropSolutionProps> = (props) => {
 		[files]
 	);
 
-	const { getRootProps, getInputProps, isDragActive } = useDropzone({
+	const { getRootProps, getInputProps } = useDropzone({
 		onDrop,
 		noClick: true,
 	});
